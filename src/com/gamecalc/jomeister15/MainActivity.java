@@ -14,7 +14,7 @@ import android.content.Context;
 import android.widget.Toast;
 import java.lang.String;
 import android.media.MediaPlayer;
-
+import android.content.Intent;
 
 
 
@@ -51,6 +51,8 @@ public class MainActivity extends Activity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        
+        screen2init();
         initSeq();
       
        
@@ -138,8 +140,20 @@ inputManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),
         bd = bd.setScale(places, RoundingMode.HALF_UP);
         return bd.doubleValue();
     }
-    
-    
+    //adding a second screen
+    private void screen2init() {
+    	Button screen2 = (Button) findViewById(R.id.screen2);
+        screen2.setOnClickListener(new View.OnClickListener() 
+        
+        {public void onClick(View v) {
+        	
+        	Intent myIntent = new Intent(v.getContext(), SideActivity1.class);
+            startActivityForResult(myIntent, 0);
+        }
+        
+        });
+    }
+
     private void dodatmath() {
     	
     	//all the vars
