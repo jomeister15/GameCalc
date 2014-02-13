@@ -21,7 +21,7 @@ import android.media.MediaPlayer;
 
 
 
-public class MainActivity extends Activity {
+public class MainActivity extends Activity{
 	
 	  //declaration of vardependence
 	  EditText TAG;
@@ -173,3 +173,4 @@ inputManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),
     
     
 }
+
