@@ -145,7 +145,7 @@ inputManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),
     	Button screen2 = (Button) findViewById(R.id.screen2);
         screen2.setOnClickListener(new View.OnClickListener() 
         
-        {public void onClick(View v) {
+        {public void onClick(View v) { 
         	
         	Intent myIntent = new Intent(v.getContext(), SideActivity1.class);
             startActivityForResult(myIntent, 0);

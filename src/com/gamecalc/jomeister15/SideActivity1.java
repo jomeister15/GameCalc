@@ -15,6 +15,8 @@ import android.widget.Toast;
 import java.lang.String;
 import android.media.MediaPlayer;
 import android.content.Intent;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 
 
@@ -35,4 +37,17 @@ public void onCreate(Bundle savedInstanceState) {
         }
 
     });
+    
+    //TODO: add webview code
+    //declare Webiviews
+    WebView runsscored = (WebView)findViewById(R.id.runsscored);
+    WebView runsallowed = (WebView)findViewById(R.id.runsallowed);
+    
+   //Loading urls
+    runsscored.loadUrl("http://espn.go.com/mlb/stats/team/_/stat/batting");
+    runsallowed.loadUrl("http://espn.go.com/mlb/stats/team/_/stat/pitching/sort/runs/order/false");
+    
+
+    
+    
 }}
