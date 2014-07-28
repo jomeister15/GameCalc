@@ -30,6 +30,10 @@ public class MainActivity extends Activity{
 	  EditText TBRS;
 	  EditText TARA;
 	  EditText TBRA;
+	  EditText TBN;
+	  EditText TAN;
+	  
+	 
 	  EditText result;
 	  Button domath;
 	  
@@ -75,6 +79,8 @@ public class MainActivity extends Activity{
     	TBRS=(EditText)findViewById(R.id.TBRS);
     	TARA=(EditText)findViewById(R.id.TARA);
     	TBRA=(EditText)findViewById(R.id.TBRA);
+    	TAN=(EditText)findViewById(R.id.TAN);
+    	TBN=(EditText)findViewById(R.id.TBN);
     	result=(EditText)findViewById(R.id.result);
     	domath=(Button)findViewById(R.id.domath);
     	
@@ -103,6 +109,9 @@ inputManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),
 	String TBRS1 = TBRS.getText().toString();
 	String TARA1 = TARA.getText().toString();
 	String TBRA1 = TBRA.getText().toString();
+	String TAN1 = TBN.getText().toString();
+	String TBN1 = TAN.getText().toString();
+	
 	
 	//dat if then doe
 	if (TAG1.equals("") || TBG1.equals("") || TARS1.equals("")
@@ -154,7 +163,11 @@ inputManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),
         });
     }
 
+    //doing the math--director's cut
+    
     private void dodatmath() {
+    	
+    	
     	
     	//all the vars
     	rsa=Double.parseDouble(TARS.getText().toString());

@@ -38,7 +38,7 @@ public void onCreate(Bundle savedInstanceState) {
 
     });
     
-    //TODO: add webview code
+    
     //declare Webiviews
     WebView runsscored = (WebView)findViewById(R.id.runsscored);
     WebView runsallowed = (WebView)findViewById(R.id.runsallowed);
