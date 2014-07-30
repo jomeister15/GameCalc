@@ -6,6 +6,8 @@ import android.view.Menu;
 import android.widget.EditText;
 import android.widget.Button;
 import android.view.View;
+
+import java.io.IOException;
 import java.lang.Math;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -15,7 +17,9 @@ import android.widget.Toast;
 import java.lang.String;
 import android.media.MediaPlayer;
 import android.content.Intent;
-
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.select.Elements;
 
 
 
@@ -111,12 +115,11 @@ inputManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),
 	String TBRA1 = TBRA.getText().toString();
 	String TAN1 = TBN.getText().toString();
 	String TBN1 = TAN.getText().toString();
-	
+	String url = "http://www.androidbegin.com/tutorial/android-basic-jsoup-tutorial/";
+		
 	
 	//dat if then doe
-	if (TAG1.equals("") || TBG1.equals("") || TARS1.equals("")
-			|| TBRS1.equals("") ||TARA1.equals("") || 
-			TBRA1.equals(""))
+	if (TBN.equals("") || TAN.equals(""))
 	{
 		//dat toast doe
 		Toast.makeText(getApplicationContext(), "Some inputs are empty", 
@@ -133,8 +136,13 @@ inputManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),
 		
 		mp1.start();
 		
-    	//doingdatmath--function version
+		//stirring the pot
+		makejsoup();
+	
+	    //doingdatmath--function version
 		dodatmath();
+		
+		
 	}}});	
     		
     		
@@ -195,6 +203,23 @@ inputManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),
     	
     	
     
+    }
+    
+    //jsoup access method
+    public void makejsoup() {
+    	
+    	String url = "http://www.androidbegin.com/tutorial/android-basic-jsoup-tutorial/";
+    		
+    	//TODO: elaborate on Jsoup code, acccess runs scored, etc...,
+    	try {
+			Document document = Jsoup.connect(url).get();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	
+    	
+    	
     }
     
     
