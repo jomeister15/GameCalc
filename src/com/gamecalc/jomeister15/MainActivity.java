@@ -119,6 +119,7 @@ inputManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),
 		
 	
 	//dat if then doe
+	//TODO: Add check for other inputs
 	if (TBN.equals("") || TAN.equals(""))
 	{
 		//dat toast doe
@@ -177,6 +178,9 @@ inputManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),
     	
     	
     	
+    	
+    	
+    	
     	//all the vars
     	rsa=Double.parseDouble(TARS.getText().toString());
     	rsb=Double.parseDouble(TBRS.getText().toString());
@@ -206,17 +210,31 @@ inputManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),
     }
     
     //jsoup access method
+    
+     
     public void makejsoup() {
     	
+    	
     	String url = "http://www.androidbegin.com/tutorial/android-basic-jsoup-tutorial/";
-    		
+    	String desc;	
+    	
     	//TODO: elaborate on Jsoup code, acccess runs scored, etc...,
     	try {
 			Document document = Jsoup.connect(url).get();
+			
+			//selecting certain parts of html
+			Elements description = document
+					.select("meta[name=description]");
+			//accessing description
+			desc = description.attr("content");
+			//setting description in TARS string
+			TARS.setText(desc);
+			
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
+			//TODO: change error--maybe make toast
 			e.printStackTrace();
 		}
+    	
     	
     	
     	
